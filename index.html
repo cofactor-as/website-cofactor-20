@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energi i samspill — animasjonskonsept</title>
+<link rel="icon" type="image/png" href="assets/cofactor-symbol.png">
+<link rel="stylesheet" href="assets/bootstrap-icons.css"><link rel="stylesheet" href="style.css?v=20261119-projects16"><script defer src="i18n.js?v=20261119-projects16"></script><script defer src="app.js?v=20261119-projects16"></script>
+</head>
+<body>
+<header class="site-header">
+<nav class="site-nav" aria-label="Hovedmeny">
+<a class="site-logo" href="./" aria-label="Cofactor – forsiden"><img src="assets/cofactor-logo.png" alt="Cofactor"></a>
+<button class="nav-toggle" type="button" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav-items"><i class="bi bi-list" aria-hidden="true"></i></button>
+<ul class="nav-items" id="nav-items">
+<li><a class="nav-link" href="#frigi-kapasitet">Frigi kapasitet</a></li>
+<li><a class="nav-link" href="#om-oss">Om oss</a></li>
+<li><a class="nav-link" href="#prosjekter">Prosjekter</a></li>
+<li><a class="nav-link login-link" href="https://dynagrid.cofactor.no"><i class="bi bi-box-arrow-in-right" aria-hidden="true"></i><span>Logg inn</span></a></li>
+</ul>
+<ul class="nav-social" aria-label="Kontakt og sosiale medier">
+<li><a class="nav-link social-link" href="https://github.com/cofactor-as" aria-label="Cofactor på GitHub"><i class="bi bi-github" aria-hidden="true"></i></a></li>
+<li><a class="nav-link social-link" href="mailto:post@cofactor.site" aria-label="Send e-post til Cofactor"><i class="bi bi-envelope" aria-hidden="true"></i></a></li>
+<li><a class="nav-link social-link" href="https://www.linkedin.com/company/cofactor-as" aria-label="Cofactor på LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+<li class="language-picker">
+<button type="button" id="language-trigger" class="language-trigger" aria-label="Velg språk" aria-expanded="false" aria-controls="language-options"><i class="bi bi-globe2" aria-hidden="true"></i><span class="language-chevron" aria-hidden="true"></span></button>
+<div id="language-options" class="language-options" hidden>
+<button type="button" data-language="nb" lang="nb" aria-pressed="true">Norsk <span aria-hidden="true">✓</span></button>
+<button type="button" data-language="en" lang="en" aria-pressed="false">English <span aria-hidden="true">✓</span></button>
+</div>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="landing-section" aria-labelledby="intro-title">
+<div class="landing-copy"><h1 id="intro-title">Frigjør kapasitet.<br>Gi plass til nytt forbruk</h1><p>Vi leverer rådgivning og digitale verktøy for smartere utnyttelse av strømnettet.</p><p class="landing-description">Med Dynagrid samler vi automatisk forbruksdata fra Elhub og Statkraft Varme. Vi analyserer hvordan nytt forbruk, lokal energiproduksjon, batterier og fleksibilitet påvirker effekttoppene – og hjelper dere å vurdere tiltak tidlig.</p><div class="landing-actions"><a class="section-jump" href="#frigi-kapasitet">Utforsk Dynagrid <span aria-hidden="true">↓</span></a><a class="demo-link" href="#kontakt">Ta kontakt for en demonstrasjon <span aria-hidden="true">↓</span></a></div></div>
+<div class="energy-illustration" aria-hidden="true">
+<svg viewBox="0 0 540 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <pattern id="energy-dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a788e" opacity=".13"/></pattern>
+ <radialGradient id="energy-halo"><stop stop-color="#e4eff3" stop-opacity=".7"/><stop offset="1" stop-color="#FAFBFF" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="290" cy="280" rx="260" ry="270" fill="url(#energy-halo)"/>
+<rect x="45" y="40" width="465" height="490" rx="90" fill="url(#energy-dots)"/>
+<g stroke="#2a788e" stroke-opacity=".17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M135 119H205Q220 119 220 134V255H270M405 125H350Q335 125 335 140V255H310"/>
+ <path d="M113 285H270M445 295H375Q360 295 360 280V275H310"/>
+ <path d="M173 443H225Q240 443 240 428V295H270M416 448H335Q320 448 320 433V295H310"/>
+ <path d="M290 310V500" stroke-dasharray="3 7"/>
+</g>
+<g fill="#FAFBFF" stroke="#a6c5ce" stroke-width="1.5"><circle cx="220" cy="194" r="3"/><circle cx="335" cy="190" r="3"/><circle cx="192" cy="285" r="3"/><circle cx="392" cy="295" r="3"/><circle cx="240" cy="373" r="3"/><circle cx="320" cy="369" r="3"/></g>
+<!-- Solar generation -->
+<g transform="translate(83 74)" class="energy-node" style="color:#c2a34a">
+ <circle cx="52" cy="43" r="54" class="node-disc"/>
+ <g class="node-art"><circle cx="69" cy="12" r="9"/><path d="M69-4v-5M69 28v5M53 12h-5M85 12h5M57 0l-4-4M81 0l4-4"/>
+ <path d="M16 29h55l10 34H6l10-34ZM12 46h64M34 29l-3 34M53 29l4 34M43 63v12M29 75h28"/></g>
+ <text x="44" y="105">Solkraft</text>
+</g>
+<!-- Wind generation -->
+<g transform="translate(368 69)" class="energy-node" style="color:#4b8f8a">
+ <circle cx="37" cy="50" r="52" class="node-disc"/>
+ <g class="node-art"><path d="M37 46v49M23 95h28M37 39 33 7a4 4 0 0 1 8 0l-4 32ZM33 45 7 62a4 4 0 0 1-4-7l30-10ZM41 45l26 17a4 4 0 0 0 4-7L41 45Z"/><circle cx="37" cy="42" r="5"/></g>
+ <text x="37" y="122">Vindkraft</text>
+</g>
+<!-- Storage -->
+<g transform="translate(65 250)" class="energy-node" style="color:#658860">
+ <circle cx="36" cy="32" r="48" class="node-disc"/>
+ <g class="node-art"><rect x="2" y="11" width="64" height="39" rx="6"/><path d="M66 23h7v15h-7M15 22v17M28 22v17M41 22v17"/></g>
+ <text x="35" y="92">Batteri</text>
+</g>
+<!-- New consumption: a commercial building -->
+<g transform="translate(405 258)" class="energy-node" style="color:#9680b3">
+ <circle cx="35" cy="34" r="51" class="node-disc"/>
+ <g class="node-art"><path d="M9 69V7h51v62M1 69h67M29 69V52h12v17M20 21h5M43 21h5M20 33h5M43 33h5M20 45h5M43 45h5M67 2v16M59 10h16"/></g>
+ <text x="35" y="101">Nytt forbruk</text>
+</g>
+<!-- Flexible charging: charger and electric bus -->
+<g transform="translate(85 397)" class="energy-node" style="color:#678c9e">
+ <ellipse cx="62" cy="42" rx="76" ry="53" class="node-disc"/>
+ <g class="node-art"><rect x="0" y="5" width="27" height="57" rx="4"/><path d="M6 62h17M16 15l-6 11h10l-6 11M27 24h6q7 0 7 7v12q0 7 6 7h7"/>
+ <rect x="54" y="17" width="73" height="40" rx="7"/><path d="M60 25h59v16H60V25ZM78 25v16M97 25v16M119 48h7M55 48h7"/><circle cx="70" cy="58" r="6"/><circle cx="112" cy="58" r="6"/></g>
+ <text x="63" y="99">Fleksibel lading</text>
+</g>
+<!-- Electricity demand -->
+<g transform="translate(385 414)" class="energy-node" style="color:#77799d">
+ <circle cx="29" cy="32" r="45" class="node-disc"/>
+ <g class="node-art"><path d="M19 3v15M39 3v15M12 18h34v10a17 17 0 0 1-34 0V18ZM29 45v8q0 10 10 10h9"/></g>
+ <text x="29" y="91">Energibehov</text>
+</g>
+<!-- Shared grid connection -->
+<g transform="translate(256 238)" style="color:#2a788e">
+ <circle cx="34" cy="37" r="57" stroke="currentColor" stroke-opacity=".12"/>
+ <rect x="0" y="0" width="68" height="74" rx="17" fill="#eff5f7" stroke="#a8c6d0" stroke-opacity=".7"/>
+ <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".65"><path d="M17 54V23h34v31M12 54h44M25 16v7M43 16v7M25 54V42h18v12M38 28l-9 10h10l-8 10"/></g>
+ <text x="34" y="100" class="hub-label">SAMSPILL</text>
+</g>
+</svg>
+</div>
+</section>
+<section id="frigi-kapasitet" class="animation-section" aria-labelledby="capacity-title" tabindex="-1">
+<div class="section-heading"><span class="section-eyebrow">01 / FRIGI KAPASITET</span><h2 id="capacity-title">Energi i samspill.</h2></div>
+<div class="scene">
+<svg class="connections" viewBox="0 0 1160 500" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="flow"><stop stop-color="#43AAC7"/><stop offset="1" stop-color="#2a788e"/></linearGradient></defs><g id="wires"></g></svg>
+<section class="sources" aria-label="Datakilder">
+<div class="column-label">DINE DATA OG RESSURSER</div>
+<div class="source" data-index="0"><span class="icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 3v7M21 3v7M8 10h16v5a8 8 0 0 1-16 0v-5ZM16 23v3a3 3 0 0 0 3 3h4"/></svg></span><div><strong>Strømforbruk</strong></div><span class="port"></span></div>
+<div class="source" data-index="1"><span class="icon">≋</span><div><strong>Fjernvarme</strong></div><span class="port"></span></div>
+<button type="button" class="source asset" data-index="2" data-asset="solar" aria-pressed="false"><span class="icon">☼</span><span class="source-text"><strong>Solkraft</strong></span><span class="port"></span><span class="toggle" aria-hidden="true"></span></button>
+<button type="button" class="source asset" data-index="3" data-asset="wind" aria-pressed="false"><span class="icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 15.5V29M11 29h10M16 12.5 14.3 3a1.7 1.7 0 0 1 3.4 0L16 12.5ZM14.7 14.8l-8.2 5a1.7 1.7 0 0 1-1.7-2.9l9.9-2.1ZM17.3 14.8l8.2 5a1.7 1.7 0 0 0 1.7-2.9l-9.9-2.1Z"/><circle cx="16" cy="14" r="2"/></svg></span><span class="source-text"><strong>Vindkraft</strong></span><span class="port"></span><span class="toggle" aria-hidden="true"></span></button>
+<button type="button" class="source asset" data-index="4" data-asset="battery" aria-pressed="false"><span class="icon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="8" width="24" height="16" rx="3"/><path d="M27 13h2v6h-2M8 13v6M13 13v6M18 13v6"/></svg></span><span class="source-text"><strong>Batterier</strong></span><span class="port"></span><span class="toggle" aria-hidden="true"></span></button>
+<button type="button" class="source asset" data-index="5" data-asset="flex" aria-pressed="false"><span class="icon">⇄</span><span class="source-text"><strong>Fleksibilitet</strong></span><span class="port"></span><span class="toggle" aria-hidden="true"></span></button>
+</section>
+<section class="optimizer" aria-label="Optimalisering"><div class="core-wrap"><div class="ring ring-outer"></div><div class="ring ring-inner"></div><div class="core"><img class="cofactor-symbol" src="assets/cofactor-symbol.png" alt="Cofactor" decoding="async"></div></div><h2>Optimalisering</h2><p id="engine-copy">Velg ressurser</p><div class="thinking"><i></i><i></i><i></i></div></section>
+<section class="result" aria-label="Illustrasjon av redusert effektuttak"><div class="chart-wrap"><svg id="chart" width="420" height="240" viewBox="0 0 420 240" role="img" aria-label="Timebasert effektuttak gjennom et døgn: opprinnelige søyler bak optimaliserte søyler, med en effektgrense på 550 kW"><g class="grid"><path d="M14 55H410M14 105H410M14 155H410M14 205H410"/></g><g id="original-bars" fill="#81939c" fill-opacity="1"><rect x="16.25" y="142.67" width="12" height="62.33" rx="2"></rect><rect x="32.75" y="147.39" width="12" height="57.61" rx="2"></rect><rect x="49.25" y="150.22" width="12" height="54.78" rx="2"></rect><rect x="65.75" y="148.33" width="12" height="56.67" rx="2"></rect><rect x="82.25" y="140.78" width="12" height="64.22" rx="2"></rect><rect x="98.75" y="123.78" width="12" height="81.22" rx="2"></rect><rect x="115.25" y="87.89" width="12" height="117.11" rx="2"></rect><rect x="131.75" y="55.78" width="12" height="149.22" rx="2"></rect><rect x="148.25" y="46.33" width="12" height="158.67" rx="2"></rect><rect x="164.75" y="59.56" width="12" height="145.44" rx="2"></rect><rect x="181.25" y="76.56" width="12" height="128.44" rx="2"></rect><rect x="197.75" y="87.89" width="12" height="117.11" rx="2"></rect><rect x="214.25" y="89.78" width="12" height="115.22" rx="2"></rect><rect x="230.75" y="82.22" width="12" height="122.78" rx="2"></rect><rect x="247.25" y="65.22" width="12" height="139.78" rx="2"></rect><rect x="263.75" y="50.11" width="12" height="154.89" rx="2"></rect><rect x="280.25" y="57.67" width="12" height="147.33" rx="2"></rect><rect x="296.75" y="76.56" width="12" height="128.44" rx="2"></rect><rect x="313.25" y="95.44" width="12" height="109.56" rx="2"></rect><rect x="329.75" y="116.22" width="12" height="88.78" rx="2"></rect><rect x="346.25" y="127.56" width="12" height="77.44" rx="2"></rect><rect x="362.75" y="135.11" width="12" height="69.89" rx="2"></rect><rect x="379.25" y="138.89" width="12" height="66.11" rx="2"></rect><rect x="395.75" y="142.67" width="12" height="62.33" rx="2"></rect></g><g id="optimized-bars" visibility="hidden" fill="#2a788e" fill-opacity="1"><rect x="18.25" y="142.67" width="8" height="62.33" rx="2"><title>00:00–01:00 · Opprinnelig: 330 kW · Optimalisert: 330 kW</title></rect><rect x="34.75" y="147.39" width="8" height="57.61" rx="2"><title>01:00–02:00 · Opprinnelig: 305 kW · Optimalisert: 305 kW</title></rect><rect x="51.25" y="150.22" width="8" height="54.78" rx="2"><title>02:00–03:00 · Opprinnelig: 290 kW · Optimalisert: 290 kW</title></rect><rect x="67.75" y="148.33" width="8" height="56.67" rx="2"><title>03:00–04:00 · Opprinnelig: 300 kW · Optimalisert: 300 kW</title></rect><rect x="84.25" y="140.78" width="8" height="64.22" rx="2"><title>04:00–05:00 · Opprinnelig: 340 kW · Optimalisert: 340 kW</title></rect><rect x="100.75" y="123.78" width="8" height="81.22" rx="2"><title>05:00–06:00 · Opprinnelig: 430 kW · Optimalisert: 430 kW</title></rect><rect x="117.25" y="87.89" width="8" height="117.11" rx="2"><title>06:00–07:00 · Opprinnelig: 620 kW · Optimalisert: 620 kW</title></rect><rect x="133.75" y="55.78" width="8" height="149.22" rx="2"><title>07:00–08:00 · Opprinnelig: 790 kW · Optimalisert: 790 kW</title></rect><rect x="150.25" y="46.33" width="8" height="158.67" rx="2"><title>08:00–09:00 · Opprinnelig: 840 kW · Optimalisert: 840 kW</title></rect><rect x="166.75" y="59.56" width="8" height="145.44" rx="2"><title>09:00–10:00 · Opprinnelig: 770 kW · Optimalisert: 770 kW</title></rect><rect x="183.25" y="76.56" width="8" height="128.44" rx="2"><title>10:00–11:00 · Opprinnelig: 680 kW · Optimalisert: 680 kW</title></rect><rect x="199.75" y="87.89" width="8" height="117.11" rx="2"><title>11:00–12:00 · Opprinnelig: 620 kW · Optimalisert: 620 kW</title></rect><rect x="216.25" y="89.78" width="8" height="115.22" rx="2"><title>12:00–13:00 · Opprinnelig: 610 kW · Optimalisert: 610 kW</title></rect><rect x="232.75" y="82.22" width="8" height="122.78" rx="2"><title>13:00–14:00 · Opprinnelig: 650 kW · Optimalisert: 650 kW</title></rect><rect x="249.25" y="65.22" width="8" height="139.78" rx="2"><title>14:00–15:00 · Opprinnelig: 740 kW · Optimalisert: 740 kW</title></rect><rect x="265.75" y="50.11" width="8" height="154.89" rx="2"><title>15:00–16:00 · Opprinnelig: 820 kW · Optimalisert: 820 kW</title></rect><rect x="282.25" y="57.67" width="8" height="147.33" rx="2"><title>16:00–17:00 · Opprinnelig: 780 kW · Optimalisert: 780 kW</title></rect><rect x="298.75" y="76.56" width="8" height="128.44" rx="2"><title>17:00–18:00 · Opprinnelig: 680 kW · Optimalisert: 680 kW</title></rect><rect x="315.25" y="95.44" width="8" height="109.56" rx="2"><title>18:00–19:00 · Opprinnelig: 580 kW · Optimalisert: 580 kW</title></rect><rect x="331.75" y="116.22" width="8" height="88.78" rx="2"><title>19:00–20:00 · Opprinnelig: 470 kW · Optimalisert: 470 kW</title></rect><rect x="348.25" y="127.56" width="8" height="77.44" rx="2"><title>20:00–21:00 · Opprinnelig: 410 kW · Optimalisert: 410 kW</title></rect><rect x="364.75" y="135.11" width="8" height="69.89" rx="2"><title>21:00–22:00 · Opprinnelig: 370 kW · Optimalisert: 370 kW</title></rect><rect x="381.25" y="138.89" width="8" height="66.11" rx="2"><title>22:00–23:00 · Opprinnelig: 350 kW · Optimalisert: 350 kW</title></rect><rect x="397.75" y="142.67" width="8" height="62.33" rx="2"><title>23:00–24:00 · Opprinnelig: 330 kW · Optimalisert: 330 kW</title></rect></g><g id="limit"><path d="M14 101.1H410"/><text x="409" y="89" text-anchor="end">Effektgrense</text></g><text x="14" y="231" class="axis">00:00</text><text x="212" y="231" text-anchor="middle" class="axis">12:00</text><text x="410" y="231" text-anchor="end" class="axis">24:00</text></svg></div><div class="legend"><span><i></i>Opprinnelig</span><span class="optimized-legend" hidden><i></i>Optimalisert</span></div></section>
+</div>
+<p id="selection-status" class="sr-only" aria-live="polite"></p>
+
+</section>
+<section id="om-oss" class="team-section" aria-labelledby="about-title" tabindex="-1">
+<div class="team-heading"><div><span class="section-eyebrow">02 / OM OSS</span><h2 id="about-title">Folkene bak Cofactor.</h2></div><p>Vi kombinerer energifag, forskning og teknologi for å utnytte energien og kapasiteten i nettet bedre.</p></div>
+<div class="team-grid"><article class="team-member" aria-labelledby="name-petter">
+<div class="team-portrait"><img src="assets/team/petter.png" alt="Petter Arnestad" loading="lazy" decoding="async" width="114" height="140"></div>
+<div class="team-details"><h3 id="name-petter">Petter Arnestad</h3><p class="team-role">Daglig leder / Seniorrådgiver</p><p class="team-bio">Fra idé til gjennomføring av energieffektive bygg, ladeanlegg og fleksible energiløsninger.</p><div class="team-contact"><a href="mailto:petter.arnestad@cofactor.no" aria-label="Send e-post til Petter Arnestad" title="Send e-post til Petter Arnestad"><i class="bi bi-envelope" aria-hidden="true"></i></a><a href="tel:+4790140592" aria-label="Ring Petter Arnestad" title="Ring Petter Arnestad"><i class="bi bi-telephone" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/petter-arnestad-79b79119/" aria-label="Petter Arnestad på LinkedIn" title="Petter Arnestad på LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></div></div>
+</article>
+<article class="team-member" aria-labelledby="name-karen">
+<div class="team-portrait"><img src="assets/team/karen.png" alt="Karen B. Lindberg" loading="lazy" decoding="async" width="114" height="140"></div>
+<div class="team-details"><h3 id="name-karen">Karen B. Lindberg</h3><p class="team-role">Spesialrådgiver / FoU-ansvarlig</p><p class="team-bio">Kobler energibruk i bygg med kraftsystemet. Ekspert på lastprofiler og fleksibilitet, med doktorgrad fra NTNU.</p><div class="team-contact"><a href="mailto:karen.lindberg@cofactor.no" aria-label="Send e-post til Karen B. Lindberg" title="Send e-post til Karen B. Lindberg"><i class="bi bi-envelope" aria-hidden="true"></i></a><a href="tel:+4799604272" aria-label="Ring Karen B. Lindberg" title="Ring Karen B. Lindberg"><i class="bi bi-telephone" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/karen-byskov-lindberg-b189907/" aria-label="Karen B. Lindberg på LinkedIn" title="Karen B. Lindberg på LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></div></div>
+</article>
+<article class="team-member" aria-labelledby="name-alexander">
+<div class="team-portrait"><img src="assets/team/alexander.png" alt="Alexander Severinsen" loading="lazy" decoding="async" width="114" height="140"></div>
+<div class="team-details"><h3 id="name-alexander">Alexander Severinsen</h3><p class="team-role">Senior dataforsker / Teknisk leder</p><p class="team-bio">Utvikler datadrevne energiverktøy. Doktorgrad i maskinlæring og energibruk i bygg.</p><div class="team-contact"><a href="mailto:alexander.severinsen@cofactor.no" aria-label="Send e-post til Alexander Severinsen" title="Send e-post til Alexander Severinsen"><i class="bi bi-envelope" aria-hidden="true"></i></a><a href="tel:+4799377455" aria-label="Ring Alexander Severinsen" title="Ring Alexander Severinsen"><i class="bi bi-telephone" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/alexante/" aria-label="Alexander Severinsen på LinkedIn" title="Alexander Severinsen på LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></div></div>
+</article>
+<article class="team-member" aria-labelledby="name-bryan">
+<div class="team-portrait"><img src="assets/team/bryan.png" alt="Bryan Tancré" loading="lazy" decoding="async" width="114" height="140"></div>
+<div class="team-details"><h3 id="name-bryan">Bryan Tancré</h3><p class="team-role">Masterstudent / Energioptimalisering</p><p class="team-bio">Utvikler modeller som samordner strøm, varme og lokal produksjon for å frigjøre nettkapasitet.</p><div class="team-contact"><a href="mailto:bryan.tancre@cofactor.no" aria-label="Send e-post til Bryan Tancré" title="Send e-post til Bryan Tancré"><i class="bi bi-envelope" aria-hidden="true"></i></a><a href="tel:+32468149945" aria-label="Ring Bryan Tancré" title="Ring Bryan Tancré"><i class="bi bi-telephone" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/bryantancre/" aria-label="Bryan Tancré på LinkedIn" title="Bryan Tancré på LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></div></div>
+</article></div>
+</section>
+<section id="prosjekter" class="projects-section" aria-labelledby="projects-title" tabindex="-1">
+<div class="projects-heading"><div><span class="section-eyebrow">03 / PROSJEKTER</span><h2 id="projects-title">Prosjekter</h2></div><div class="project-controls"><span id="project-position" class="project-position" aria-live="polite" aria-atomic="true">1–3 / 8</span><button type="button" id="project-prev" aria-label="Forrige prosjekter" aria-controls="project-track" disabled><i class="bi bi-arrow-left" aria-hidden="true"></i></button><button type="button" id="project-next" aria-label="Neste prosjekter" aria-controls="project-track"><i class="bi bi-arrow-right" aria-hidden="true"></i></button></div></div>
+<div id="project-track" class="project-track" tabindex="0" role="region" aria-label="Bla gjennom prosjekter"><article class="project-card" aria-labelledby="project-title-1">
+<div class="project-visual project-visual-1" aria-hidden="true"><span class="project-number">01</span><svg class="project-shore-power-icon" viewBox="0 0 144 80" aria-hidden="true">
+<!-- Cruise ship and decks -->
+<path d="M5 45h80l-12 15H17L5 45ZM17 45V31h54v14M26 31V21h34v10M40 21V12h12v9M23 38h5m7 0h5m7 0h5m7 0h5M33 26h5m7 0h5"/>
+<!-- Quay, shore-power cabinet and nearby building -->
+<path d="M91 59h48M96 59v10m34-10v10M117 59V15h19v44M123 23h6m-6 9h6m-6 9h6"/>
+<rect x="92" y="34" width="17" height="25" rx="2"/>
+<path d="m101 39-4 7h6l-4 7M92 43h-4q-4 0-4 4v4q0 5-5 5h-3"/>
+<!-- Harbor water -->
+<path d="M8 69q6 5 12 0t12 0t12 0t12 0t12 0t12 0"/>
+</svg><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">ENERGISAMFUNN · LANDSTRØM</span><h3 id="project-title-1">Energisamfunn Brattøra</h3>
+<dl class="project-facts"><div><dt>Kunde</dt><dd>Trondheim kommune og Trondheim Havn IKS</dd></div><div><dt>Periode</dt><dd>2025–2026 · Planlagt avslutning mars 2026</dd></div></dl>
+<p>Kartlegging av energibruk, effekttopper og fleksibilitet for å frigjøre kapasitet til landstrøm for cruiseskip på inntil 12 MW. Vurdering av sol, vind, batterier og lokal deling av energi og fleksibilitet, inkludert sektorkobling og energisamarbeid.</p></div>
+</article><article class="project-card" aria-labelledby="project-title-2">
+<div class="project-visual project-visual-2" aria-hidden="true"><span class="project-number">02</span><svg class="project-retail-icon" viewBox="0 0 136 80" aria-hidden="true">
+<!-- Rooftop solar panels -->
+<path d="M25 7h44l6 15H19L25 7ZM22 14h50M39 7l-2 15M54 7l2 15M28 22v6M65 22v6"/>
+<!-- Grocery storefront and entrance -->
+<path d="M9 28h76v9H9zM14 37v35h66V37M8 72h78M57 72V45h16v27M68 56v5"/>
+<!-- Shopping cart in the shop window -->
+<rect x="21" y="44" width="29" height="21" rx="2"/>
+<path d="M25 48h4l3 10h11l3-7H30"/>
+<circle cx="34" cy="61" r="1"/><circle cx="42" cy="61" r="1"/>
+<!-- Connected battery storage -->
+<rect x="102" y="35" width="23" height="37" rx="3"/>
+<path d="M108 35v-4h11v4M115 43l-6 11h8l-6 11M80 57h10q6 0 6 6v1q0 4 6 4M97 72h33"/>
+</svg><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">DAGLIGVARE · FLEKSIBILITET</span><h3 id="project-title-2">Retailflex</h3>
+<dl class="project-facts"><div><dt>Kunde</dt><dd>Coop Norge SA</dd></div><div><dt>Periode</dt><dd>2022–2026 · Avsluttet</dd></div></dl>
+<p>Konseptutvikling, bygging og drift av Norges første energifleksible dagligvarebutikk. Utnyttelse av fleksibilitet i tekniske anlegg, lading, batterier og solceller, med elektrisk og termisk energilagring. Deltakelse i Statnetts reservemarkeder og levering av fleksibilitet til Lede.</p></div>
+</article><article class="project-card" aria-labelledby="project-title-3">
+<div class="project-visual project-visual-3" aria-hidden="true"><span class="project-number">03</span><svg class="project-industrial-icon" viewBox="0 0 112 64" aria-hidden="true">
+<path d="M3 59h106M8 59V30l17-10v10l17-10v39M17 24V5h9v19M18 5h7M42 59V37l24-13 24 13v22M49 37h34M55 59V45h10v14M72 45h9v8M90 59V17h15v42M95 25h5M95 34h5M95 43h5M15 38h7v8h-7zM29 38h7v8h-7z"/>
+</svg><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">INDUSTRI · NETTKAPASITET</span><h3 id="project-title-3">Grønt Industriløft Verdal industripark</h3>
+<dl class="project-facts"><div><dt>Kunde</dt><dd>Verdal kommune og Verdal Industripark</dd></div><div><dt>Periode</dt><dd>2026–2028 · Pågående</dd></div></dl>
+<p>Kartlegging av nettsituasjonen, energibruk og fleksibilitet for å frigjøre kapasitet til nytt forbruk i industriparken. Vurdering av sol, vind, batterier, nærvarme og lokal deling av energi og fleksibilitet, i samarbeid med bedriftene i området.</p></div>
+</article><article class="project-card" aria-labelledby="project-title-4">
+<div class="project-visual project-visual-4" aria-hidden="true"><span class="project-number">04</span><span class="project-charging-icon"><svg viewBox="0 0 32 48" aria-hidden="true"><rect x="3" y="3" width="20" height="39" rx="3"/><path d="M1 44h24M15 10l-5 9h7l-5 9M23 13h3q4 0 4 4v15q0 4-4 4h-3"/></svg><i class="bi bi-truck"></i></span><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">TUNGTRANSPORT · LADING</span><h3 id="project-title-4">Ladeanlegg for tungbil</h3>
+<dl class="project-facts"><div><dt>Kunde</dt><dd>Coop Norge SA</dd></div><div><dt>Periode</dt><dd>2024–2026 · Pågående</dd></div></dl>
+<p>Kartlagt elektrifisering av nærdistribusjon fra Coops lagre i Bergen, Trondheim, Gardermoen og Tromsø. Beregnet ladebehov, dimensjonert anlegg og fulgt opp nettilknytning, anbud og leverandørvalg. Videre bistand omfatter bygging, idriftsettelse og oppfølging av drift.</p></div>
+</article>
+<article class="project-card" aria-labelledby="project-title-5">
+<div class="project-visual project-visual-5" aria-hidden="true"><span class="project-number">05</span><svg class="project-neighbourhood-icon" viewBox="0 0 144 86" aria-hidden="true">
+<!-- Apartment building -->
+<path d="M9 67V15h38v52M7 15h42M17 25h6m10 0h6M17 36h6m10 0h6M17 47h6m10 0h6M23 67V55h10v12"/>
+<!-- Commercial building with rooftop solar -->
+<path d="M87 67V35h48v32M84 35h54M94 35v-6m31 6v-6M95 17h28l6 12H89l6-12ZM92 23h34M105 17l-1 12M114 17l2 12M94 44h15v15H94zM117 67V44h11v23"/>
+<!-- Shared EV charger -->
+<rect x="61" y="40" width="15" height="27" rx="2"/>
+<path d="m70 45-5 8h7l-5 8M76 47h3q4 0 4 4v8q0 4-4 4h-3"/>
+<!-- Shared local energy connection -->
+<path d="M5 67h134M28 67v11h83V67M68 67v11"/>
+<circle cx="68" cy="78" r="2.5"/>
+</svg><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">OMRÅDEUTVIKLING · KLIMA OG ENERGI</span><h3 id="project-title-5">Klima- og energikonsept for Edvardsløkka</h3>
+<dl class="project-facts"><div><dt>Kunde</dt><dd>Edvardsløkka bolig AS (Conseptor)</dd></div></dl>
+<p>Utredet et helhetlig klima- og energikonsept for 7 000 m² næringsareal og 130 boliger. Vurdert solceller, varme, elbillading, batterier, utslippsreduserende tiltak og energiforvaltning for området. Utført i samarbeid med Sweco og Glitre Energiløsninger.</p></div>
+</article>
+<article class="project-card" aria-labelledby="project-title-6">
+<div class="project-visual project-visual-6" aria-hidden="true"><span class="project-number">06</span><svg class="project-ranheim-icon" viewBox="0 0 150 84" aria-hidden="true">
+<!-- Residential buildings -->
+<path d="M5 70h62M10 70V25h24v45M8 25l14-12 14 12M17 35h3m5 0h3M17 45h3m5 0h3M19 70V57h7v13M34 70V39h27v31M32 39l15-12 16 12M41 48h4m7 0h3M44 70V59h8v11"/>
+<!-- Original peak, import limit, and reduced demand -->
+<path d="M77 13v57h68" opacity=".4"/>
+<path d="M82 38h61" stroke-dasharray="3 4" opacity=".65"/>
+<path d="M83 62 94 56 105 18 116 50 128 28 141 61" opacity=".3"/>
+<path d="M83 62 94 56 105 44 116 50 128 45 141 61"/>
+<path d="M105 23v14m-4-4 4 4 4-4"/>
+</svg><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">OMRÅDEUTVIKLING · EFFEKTREDUKSJON</span><h3 id="project-title-6">Effektreduserende tiltak på Ranheim</h3>
+<dl class="project-facts"><div><dt>Kunde</dt><dd>Ranheim Utvikling AS (Nordr)</dd></div></dl>
+<p>Utredet effektreduserende tiltak og energiløsninger for et område planlagt med 7 000 m² næringsareal og 600 boliger. Vurdert solceller, varme, elbillading, batterier og energiforvaltning. Utført i samarbeid med Asplan Viak i Trondheim.</p></div>
+</article>
+<article class="project-card" aria-labelledby="project-title-7">
+<div class="project-visual project-visual-7" aria-hidden="true"><span class="project-number">07</span>
+<svg class="project-weather-icon" viewBox="0 0 150 86" aria-hidden="true">
+<!-- Map folds and terrain -->
+<path d="m8 23 32-9 33 10 32-9v52l-32 10-33-10-32 9V23Z" opacity=".55"/>
+<path d="M40 14v53M73 24v53" opacity=".25"/>
+<path d="m12 52 13-9 15 5 15-13 17 9 17-12 11 3" opacity=".2"/>
+<!-- Electricity network -->
+<path d="m23 61 26-17 35 14 12-30"/>
+<circle cx="23" cy="61" r="3"/><circle cx="49" cy="44" r="3"/><circle cx="84" cy="58" r="3"/><circle cx="96" cy="28" r="3"/>
+<!-- Wind across the network -->
+<path d="M95 13h28q9 0 9-6t-10-3M112 25h24q9 0 9-7t-11-3M112 37h15q8 0 8 6t-10 3"/>
+</svg><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">VÆRDATA · NETTBEREDSKAP</span><h3 id="project-title-7">Klimamonitor – ett verktøy, hele værbildet</h3>
+<dl class="project-facts"><div><dt>Kunde</dt><dd>Nettselskapet AS</dd></div><div><dt>I media</dt><dd><a class="project-media-link" href="https://www.europower.no/sikkerhet-og-beredskap/vil-kutte-i-milliardkostnader-med-nytt-beredskapsverktoy/2-1-2040887" target="_blank" rel="noopener noreferrer"><span>Les saken i Europower</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></dd></div></dl>
+<p>Utviklet et verktøy som kobler værprognoser og historiske værdata direkte til linjenettet. Gir grunnlag for å planlegge beredskap før hendelser, analysere årsaker i etterkant og arbeide målrettet med å redusere KILE-kostnader.</p></div>
+</article>
+<article class="project-card" aria-labelledby="project-title-8">
+<div class="project-visual project-visual-8" aria-hidden="true"><span class="project-number">08</span>
+<svg class="project-transition-icon" viewBox="0 0 144 86" aria-hidden="true">
+<!-- Online energy platform -->
+<rect x="10" y="17" width="91" height="55" rx="4"/><path d="M10 29h91M45 72v8m20-8v8M34 80h43"/>
+<path d="M17 23h2m5 0h2m5 0h2M20 61V43h24v18H20ZM20 49h24M28 43v18m8-18v18M55 61V50m12 11V42m12 19V36M51 64h35"/>
+<!-- Shared access to renewable energy -->
+<circle cx="115" cy="23" r="14"/><path d="M115 3V0m0 46v-3M95 23h-4m48 0h4M101 9l-3-3m31 3 3-3M129 37l3 3"/>
+<path d="M111 56h20M121 46v20" opacity=".6"/>
+</svg><span class="project-visual-line"></span></div>
+<div class="project-copy"><span class="project-tag">FRIVILLIGHET · ENERGIOMSTILLING</span><h3 id="project-title-8">Ingeniører uten grenser</h3>
+<dl class="project-facts"><div><dt>Periode</dt><dd>2025</dd></div></dl>
+<p>Alexander bidro som frivillig i Ingeniører uten grenser, sammen med tre kollegaer, til WWFs «East Africa Energy Transition Programme». Utviklet en nettløsning med solkalkulator og oversikt over strømtilgang, ren matlaging, kraftproduksjon, fornybarandel, energiaktører og strømkostnader i Uganda, Kenya, Tanzania og Madagaskar.</p></div>
+</article></div>
+</section>
+<section id="kontakt" class="contact-section" aria-labelledby="demo-title" tabindex="-1">
+<div class="contact-intro"><span class="section-eyebrow">04 / KONTAKT</span>
+<h2 id="demo-title">Se hva Dynagrid kan gjøre.</h2>
+<p id="demo-intro">Fortell oss litt om behovet deres, så kan vi tilpasse en demonstrasjon.</p>
+</div>
+<div class="contact-form"><form id="demo-form">
+<div class="demo-fields"><label>Navn <span aria-hidden="true">*</span><input name="name" autocomplete="name" required maxlength="120"></label><label>E-post <span aria-hidden="true">*</span><input type="email" name="email" autocomplete="email" required maxlength="254"></label></div>
+<label>Virksomhet<input name="company" autocomplete="organization" maxlength="160"></label>
+<label>Hva ønsker dere å utforske? <span class="optional">Valgfritt</span><textarea name="message" rows="3" maxlength="3000" placeholder="For eksempel nettkapasitet, nytt forbruk eller fleksibilitet …"></textarea></label>
+<p class="demo-notice" id="demo-notice">Dette er en forhåndsvisning. Skjemaet sender eller lagrer ingen opplysninger.</p>
+<button type="submit" class="demo-submit">Prøv skjemaet <span aria-hidden="true">↗</span></button>
+<p id="demo-feedback" class="demo-feedback" role="status"></p>
+</form></div>
+</section>
+</main>
+
+</body></html>
