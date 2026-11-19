@@ -2,6 +2,7 @@
 // preserves icons, form values, links, and the current animation state.
 (() => {
  const english = {
+  'Noen av dem vi samarbeider med':'Some of the organizations we work with','Samarbeidspartnere':'Organizations we work with',
   'PRODUKSJON':'GENERATION','KAPASITETSTILTAK':'CAPACITY MEASURES','FORBRUK':'DEMAND',
   'ENØK':'Energy efficiency','Landstrøm skip':'Shore power','Produksjon varme':'Heat generation',
   'Fra behov til gjennomføring.':'From needs to implementation.',

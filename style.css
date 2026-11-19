@@ -357,3 +357,44 @@ html[lang="en"] .landing-copy h1{font-size:clamp(36px,4.1vw,55px)}
 .energy-new-demand-link{fill:none;stroke:#9680b3;stroke-opacity:.5;stroke-width:1.8;stroke-dasharray:2 7;stroke-linecap:round}
 .energy-new-demand .node-disc{stroke-dasharray:3 5;stroke-opacity:.35;fill-opacity:.7}
 .energy-new-demand text{fill:#88739f}
+
+/* Partner logos: a quiet, expandable strip between introduction and product. */
+.partners{padding:12px 0 48px}
+.partners h2{text-align:center;font-size:13px;font-weight:400;letter-spacing:.2px;color:#87969e;margin:0 0 23px}
+.partner-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 48px;list-style:none;margin:0;padding:0}
+.partner-logos li{display:flex;align-items:center;justify-content:center;flex:0 0 240px;min-height:80px}
+.partner-logos img{display:block;object-fit:contain;height:auto;max-width:100%}
+.partner-logos .partner-havn{width:220px}.partner-logos .partner-kommune{width:270px;max-width:270px}.partner-logos .partner-coop{width:85px}
+.partner-logos:focus-visible{outline:2px solid var(--primary);outline-offset:5px;border-radius:5px}
+@media(max-width:1000px){.partner-logos{column-gap:25px}.partner-logos li{flex-basis:210px}.partner-logos .partner-havn{width:200px}.partner-logos .partner-kommune{width:240px;max-width:240px}}
+@media(max-width:760px){.partners{padding:12px 0 35px}.partners h2{font-size:12px;margin-bottom:14px}.partner-logos{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;gap:22px;padding:4px 8px 12px;scrollbar-width:thin;scrollbar-color:#d2e1e7 transparent}.partner-logos li{flex:0 0 195px;scroll-snap-align:center;min-height:75px}.partner-logos .partner-havn{width:185px}.partner-logos .partner-kommune{width:220px;max-width:220px}.partner-logos .partner-coop{width:78px}}
+
+/* Partners belong to the introductory copy, before its calls to action. */
+.landing-copy .partners{padding:0;margin-top:30px}
+.landing-copy .partners h2{text-align:left;font-size:11px;margin-bottom:12px}
+.landing-copy .partner-logos{justify-content:flex-start;flex-wrap:nowrap;gap:22px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#d2e1e7 transparent;padding:4px 0 10px}
+.landing-copy .partner-logos li{flex:0 0 auto;min-height:50px}
+.landing-copy .partner-logos .partner-havn{width:150px}
+.landing-copy .partner-logos .partner-kommune{width:175px;max-width:175px}
+.landing-copy .partner-logos .partner-coop{width:65px}
+.landing-copy .landing-actions{margin-top:18px}
+@media(max-width:760px){.landing-copy .partners{margin-top:25px}.landing-copy .partner-logos{gap:22px}.landing-copy .partner-logos .partner-havn{width:140px}.landing-copy .partner-logos .partner-kommune{width:160px;max-width:160px}.landing-copy .partner-logos .partner-coop{width:60px}}
+/* Slightly stronger partner heading and logo presence. */
+.landing-copy .partners h2{font-size:13px}
+.landing-copy .partner-logos .partner-havn{width:170px}
+.landing-copy .partner-logos .partner-kommune{width:195px;max-width:195px}
+.landing-copy .partner-logos .partner-coop{width:73px}
+@media(max-width:760px){
+ .landing-copy .partner-logos .partner-havn{width:155px}
+ .landing-copy .partner-logos .partner-kommune{width:180px;max-width:180px}
+ .landing-copy .partner-logos .partner-coop{width:68px}
+}
+/* Optical alignment: Coop's main wordmark sits high within its image. */
+.landing-copy .partner-logos .partner-coop{transform:translateY(4px)}
+
+.landing-copy .partner-logos .partner-proneo{width:145px}
+@media(max-width:760px){.landing-copy .partner-logos .partner-proneo{width:130px}}
+
+/* Start Proneo on a new row, clear of the hero illustration. */
+.landing-copy .partner-logos{flex-wrap:wrap;row-gap:12px}
+.landing-copy .partner-logos .partner-second-row{flex-basis:100%;justify-content:flex-start}
