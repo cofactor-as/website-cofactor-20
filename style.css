@@ -349,3 +349,11 @@ html[lang="en"] .landing-copy h1{font-size:clamp(36px,4.1vw,55px)}
  .process-content{position:relative;padding-right:36px;min-height:64px}.process-icon{position:absolute;right:0;top:4px;font-size:20px;margin:0;opacity:.75}
  .process-content h4{font-size:17px;margin:5px 0 7px}.process-content p{font-size:14px;max-width:440px}
 }
+/* Keep labels clear where the expanded energy network passes behind them. */
+.energy-node text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round}
+
+/* Loose functional groups; proposed demand stays outside the existing network. */
+.energy-group-labels text{fill:#7d969d;text-anchor:middle;font:500 9px 'Figtree',sans-serif;letter-spacing:1.4px}
+.energy-new-demand-link{fill:none;stroke:#9680b3;stroke-opacity:.5;stroke-width:1.8;stroke-dasharray:2 7;stroke-linecap:round}
+.energy-new-demand .node-disc{stroke-dasharray:3 5;stroke-opacity:.35;fill-opacity:.7}
+.energy-new-demand text{fill:#88739f}

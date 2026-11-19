@@ -2,6 +2,8 @@
 // preserves icons, form values, links, and the current animation state.
 (() => {
  const english = {
+  'PRODUKSJON':'GENERATION','KAPASITETSTILTAK':'CAPACITY MEASURES','FORBRUK':'DEMAND',
+  'ENØK':'Energy efficiency','Landstrøm skip':'Shore power','Produksjon varme':'Heat generation',
   'Fra behov til gjennomføring.':'From needs to implementation.',
   'Datagrunnlag':'Data','Tiltak':'Measures','Beslutning':'Decision','Gjennomføring':'Implementation',
   'Vi avklarer effektbehov og begrensninger i området.':'We identify power requirements and constraints in the area.',
@@ -60,7 +62,7 @@
   'Vi leverer rådgivning og digitale verktøy for smartere utnyttelse av strømnettet.':'We provide advice and digital tools to make better use of the electricity grid.',
   'Med Dynagrid samler vi automatisk forbruksdata fra Elhub og Statkraft Varme. Vi analyserer hvordan nytt forbruk, lokal energiproduksjon, batterier og fleksibilitet påvirker effekttoppene – og hjelper dere å vurdere tiltak tidlig.':'Dynagrid automatically collects consumption data from Elhub and Statkraft Varme. We analyse how new demand, local generation, batteries and flexibility affect peak loads — helping you assess options early.',
   'Utforsk Dynagrid':'Explore Dynagrid','Ta kontakt for en demonstrasjon':'Get in touch for a demo',
-  'Solkraft':'Solar power','Vindkraft':'Wind power','Batteri':'Battery','Nytt forbruk':'New demand','Fleksibel lading':'Flexible charging','Energibehov':'Energy demand','SAMSPILL':'COORDINATION',
+  'Solkraft':'Solar power','Vindkraft':'Wind power','Batteri':'Battery','Nytt forbruk':'New demand','Lading':'Charging','Energibehov':'Energy demand','SAMSPILL':'COORDINATION',
   '01 / FRIGI KAPASITET':'01 / FREE UP CAPACITY','Energi i samspill.':'Energy working together.',
   'Datakilder':'Data sources','DINE DATA OG RESSURSER':'YOUR DATA AND ASSETS',
   'Strømforbruk':'Electricity demand','Fjernvarme':'District heating','Batterier':'Batteries','Fleksibilitet':'Flexibility',
