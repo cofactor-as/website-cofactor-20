@@ -321,3 +321,31 @@ html[lang="en"] .landing-copy h1{font-size:clamp(36px,4.1vw,55px)}
 
 .project-visual-8{background:#f3f1e7;color:#a69b6a}
 .project-transition-icon{position:relative;z-index:1;width:144px;height:86px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Slightly larger numbered section labels. */
+.section-eyebrow{font-size:12px}
+
+/* The customer journey follows the technical demonstration. */
+.process{margin-top:65px;padding-top:34px;border-top:1px solid #e6edf1}
+.process-heading{display:flex;align-items:center;gap:25px;margin-bottom:32px}
+.process-heading h3{font-size:22px;line-height:1.35;font-weight:500;letter-spacing:-.5px;margin:0}
+.process-heading-line{height:1px;width:48px;background:#b8cfd9}
+.process-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:0;gap:24px}
+.process-step{position:relative;min-width:0}
+.process-marker{position:relative;display:flex;align-items:center;height:34px;margin-bottom:23px}
+.process-marker>span{position:relative;z-index:1;display:grid;place-items:center;width:34px;height:34px;border:1px solid #ccdee6;border-radius:50%;background:var(--bg);font-size:10px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:.5px;color:var(--primary)}
+.process-step:not(:last-child) .process-marker:after{content:'';position:absolute;left:44px;right:-14px;top:16px;height:1px;background:#d3e1e8}
+.process-step:not(:last-child) .process-marker:before{content:'';position:absolute;right:-12px;top:13px;width:6px;height:6px;border-right:1px solid #bdd1db;border-top:1px solid #bdd1db;transform:rotate(45deg)}
+.process-icon{display:block;font-size:23px;line-height:1;color:#729aa8;margin-bottom:14px}
+.process-content h4{font-size:17px;font-weight:500;letter-spacing:-.2px;margin:0 0 10px;line-height:1.35;overflow-wrap:anywhere}
+.process-content p{font-size:13px;line-height:1.75;color:var(--muted);margin:0;max-width:210px}
+@media(max-width:1000px){.process-steps{gap:16px}.process-content h4{font-size:15px}.process-content p{font-size:12px}.process-step:not(:last-child) .process-marker:after{right:-9px}.process-step:not(:last-child) .process-marker:before{right:-7px}}
+@media(max-width:760px){
+ .process{margin-top:45px;padding-top:30px}.process-heading{margin-bottom:28px}.process-heading h3{font-size:21px}
+ .process-steps{grid-template-columns:1fr;gap:0}.process-step{display:grid;grid-template-columns:34px 1fr;column-gap:20px;padding-bottom:28px}.process-step:last-child{padding-bottom:0}
+ .process-marker{height:100%;margin:0;align-items:start}
+ .process-step:not(:last-child) .process-marker:after{left:16px;right:auto;top:42px;bottom:-20px;height:auto;width:1px}
+ .process-step:not(:last-child) .process-marker:before{left:13px;right:auto;top:auto;bottom:-18px;transform:rotate(135deg)}
+ .process-content{position:relative;padding-right:36px;min-height:64px}.process-icon{position:absolute;right:0;top:4px;font-size:20px;margin:0;opacity:.75}
+ .process-content h4{font-size:17px;margin:5px 0 7px}.process-content p{font-size:14px;max-width:440px}
+}

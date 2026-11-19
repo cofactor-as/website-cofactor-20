@@ -2,6 +2,14 @@
 // preserves icons, form values, links, and the current animation state.
 (() => {
  const english = {
+  'Fra behov til gjennomføring.':'From needs to implementation.',
+  'Datagrunnlag':'Data','Tiltak':'Measures','Beslutning':'Decision','Gjennomføring':'Implementation',
+  'Vi avklarer effektbehov og begrensninger i området.':'We identify power requirements and constraints in the area.',
+  'Dynagrid samler og analyserer timeverdier for strøm og fjernvarme.':'Dynagrid collects and analyses hourly electricity and district heating data.',
+  'Vi vurderer produksjon, lagring og fleksibilitet i samspill.':'We assess how generation, storage and flexibility work together.',
+  'Vi sammenligner løsninger og synliggjør potensialet for frigjort kapasitet.':'We compare solutions and show their potential to free up grid capacity.',
+  'Vi bistår med nettdialog og leverandørvalg.':'We support discussions with grid operators and supplier selection.',
+
   'FRIVILLIGHET · ENERGIOMSTILLING':'VOLUNTEERING · ENERGY TRANSITION',
   'Ingeniører uten grenser':'Engineers Without Borders',
   'Alexander bidro som frivillig i Ingeniører uten grenser, sammen med tre kollegaer, til WWFs «East Africa Energy Transition Programme». Utviklet en nettløsning med solkalkulator og oversikt over strømtilgang, ren matlaging, kraftproduksjon, fornybarandel, energiaktører og strømkostnader i Uganda, Kenya, Tanzania og Madagaskar.':'As a volunteer with Engineers Without Borders, Alexander worked with three colleagues on WWF’s East Africa Energy Transition Programme. Developed a web platform with a solar calculator and information on electricity access, clean cooking, power generation, renewable energy shares, energy-sector stakeholders and electricity costs in Uganda, Kenya, Tanzania and Madagascar.',
