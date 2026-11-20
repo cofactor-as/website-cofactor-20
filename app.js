@@ -77,8 +77,15 @@ if(!reduced){
 
 const navToggle=document.querySelector('.nav-toggle');
 const navItems=document.querySelector('.nav-items');
-navToggle.addEventListener('click',()=>{const open=navToggle.getAttribute('aria-expanded')!=='true';navToggle.setAttribute('aria-expanded',String(open));navToggle.setAttribute('aria-label',t(open?'Lukk meny':'Åpne meny'));navItems.classList.toggle('open',open);});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&navItems.classList.contains('open')){navToggle.click();navToggle.focus();}});
+const loginDropdown=document.querySelector('.login-dropdown');
+navToggle.addEventListener('click',()=>{const open=navToggle.getAttribute('aria-expanded')!=='true';navToggle.setAttribute('aria-expanded',String(open));navToggle.setAttribute('aria-label',t(open?'Lukk meny':'Åpne meny'));navItems.classList.toggle('open',open);if(!open)loginDropdown.open=false;});
+document.addEventListener('click',event=>{if(!loginDropdown.contains(event.target))loginDropdown.open=false;});
+loginDropdown.addEventListener('focusout',event=>{if(!loginDropdown.contains(event.relatedTarget))loginDropdown.open=false;});
+document.addEventListener('keydown',event=>{
+ if(event.key!=='Escape')return;
+ if(loginDropdown.open){loginDropdown.open=false;loginDropdown.querySelector('summary').focus();}
+ else if(navItems.classList.contains('open')){navToggle.click();navToggle.focus();}
+});
 
 const sectionLinks=[...document.querySelectorAll('.nav-items a[href^="#"]')];
 sectionLinks.forEach(link=>link.addEventListener('click',()=>{if(navItems.classList.contains('open'))navToggle.click();document.querySelector(link.hash)?.focus({preventScroll:true});}));

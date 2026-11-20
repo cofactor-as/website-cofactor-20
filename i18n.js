@@ -2,6 +2,23 @@
 // preserves icons, form values, links, and the current animation state.
 (() => {
  const english = {
+  "Formål":"Purpose",
+  "Områdeanalyser":"Area-wide analysis",
+  "Estimering av PV produksjon":"PV generation estimates",
+  "Nasjonale og regionale analyser":"National and regional analysis",
+
+  "Lisensiert":"Licensing",
+  "Ta kontakt for pris":"Contact us for pricing",
+  "Fritt tilgjengelig basisversjon":"Basic version available free of charge",
+  "Internt arbeidsverktøy. Tilgang på forespørsel.":"Internal tool. Access available on request.",
+
+  "Dynagrid er vårt verktøy for områdeanalyser. Verktøyet brukes i kundeprosjekter hvor vi har behov for timebaserte analyser av energibruken fra elektrisitet og fjernvarme fra unike målepunkt. Innhenting av data er automatisert ved hjelp av våre integrasjoner mot Elhub og Statkraft Varme. Når innhenting av data er gjennomført har vi utviklet funksjonalitet for å analysere hvordan eksisterende energibruk endres når man legger til nytt forbruk og nye tiltak. En viktig del av verktøyet er optimeringsalgoritmer for å analysere hvilken kombinasjon av tiltak som gir mest potensiale for lastreduksjon.":"Dynagrid is our tool for area-wide energy analysis. We use it in client projects that require hourly analysis of electricity and district heating use at individual metering points. Data collection is automated through our integrations with Elhub and Statkraft Varme. Once the data have been collected, the tool enables us to analyse how existing energy use changes when new demand and new measures are added. A key part of the tool is its optimisation algorithms, which analyse which combination of measures offers the greatest potential for demand reduction.",
+  "I mange prosjekter er det nyttig å forstå hvilke perioder energilastene er høyest, både i netteier sitt område, i kommunen og i grunnkretsen. Når inntreffer den høyeste lasten? Hvordan påvirker temperatur? Vi har derfor utviklet vår egen løsning for å analysere og visualisere disse dataene på timenivå. Løsningen er integrert mot temperaturdata for alle lokasjoner i Norge og henter kontinuerlig data fra Elhub. Dette gjør det mulig med raske tidligfase analyser av energibruken på timenivå.":"In many projects, it is useful to understand when energy demand is highest across the grid operator’s service area, the municipality and the basic statistical unit. When does peak demand occur? How does temperature affect it? We have therefore developed our own solution to analyse and visualise these data at hourly resolution. The solution integrates temperature data for all locations in Norway and continuously retrieves data from Elhub. This enables rapid early-stage analysis of hourly energy use.",
+  "Det finnes i dag mange ulike digitale tjenester for å estimere produksjonen til solcelleanlegg. Flere av disse benytter også vi. Men, med Norges topografi og krevende klimatiske påvirkning savnet vi muligheten til å vurdere hvordan valg av ulike solinnstrålingsdata påvirker estimatene, og hvordan snøtap i ulike områder påvirker estimert produksjon. Vi ønsket også å kunne laste ned ulike solinnstrålingsdata for å forenkle integrasjon mot PVSyst. For å løse disse utfordringene har vi derfor valgt å utvikle vår egen løsning - PV Cofactor. Basisversjonen er fritt tilgjengelig. Ta kontakt om du ønsker tilgang.":"There are many digital services available today for estimating the output of solar PV systems. We use several of them ourselves. However, given Norway’s topography and challenging climate, we wanted to assess how different solar irradiation datasets affect estimates, and how snow losses in different areas affect estimated generation. We also wanted to download different solar irradiation datasets to simplify integration with PVSyst. To address these challenges, we decided to develop our own solution — PV Cofactor. The basic version is available free of charge. Contact us if you would like access.",
+  'Løsninger':'Solutions','04 / LØSNINGER':'04 / SOLUTIONS',
+  'Batteri, solkraft og fleksibilitet reduserer effekttoppen ved et industrianlegg':'Battery storage, solar power and flexibility reduce peak demand at an industrial site',
+  'Detaljerte solenergiberegninger for bygninger med takflater, solinnstråling og produksjonsanalyse':'Detailed solar calculations for buildings, including roof surfaces, solar irradiation and generation analysis',
+  'Norge, fylker og kommuner koblet til regionale energianalyser og dialog med interessenter':'Norway, counties and municipalities connected to regional energy analysis and stakeholder discussions',
   'Noen av dem vi samarbeider med':'Some of the organizations we work with','Samarbeidspartnere':'Organizations we work with',
   'PRODUKSJON':'GENERATION','KAPASITETSTILTAK':'CAPACITY MEASURES','FORBRUK':'DEMAND',
   'ENØK':'Energy efficiency','Landstrøm skip':'Shore power','Produksjon varme':'Heat generation',
@@ -83,7 +100,7 @@
   'Utvikler datadrevne energiverktøy. Doktorgrad i maskinlæring og energibruk i bygg.':'Developing data-driven energy tools. Holds a PhD in machine learning and building energy use.',
   'Masterstudent / Energioptimalisering':'Master’s Student / Energy Optimization',
   'Utvikler modeller som samordner strøm, varme og lokal produksjon for å frigjøre nettkapasitet.':'Developing models that coordinate electricity, heat and local generation to free up grid capacity.',
-  '03 / PROSJEKTER':'03 / PROJECTS','04 / KONTAKT':'04 / CONTACT','Se hva Dynagrid kan gjøre.':'See what Dynagrid can do.',
+  '03 / PROSJEKTER':'03 / PROJECTS','05 / KONTAKT':'05 / CONTACT','Se hva Dynagrid kan gjøre.':'See what Dynagrid can do.',
   'Fortell oss litt om behovet deres, så kan vi tilpasse en demonstrasjon.':'Tell us a little about your needs so we can tailor a demonstration.',
   'Navn':'Name','E-post':'Email','Virksomhet':'Company','Hva ønsker dere å utforske?':'What would you like to explore?','Valgfritt':'Optional',
   'For eksempel nettkapasitet, nytt forbruk eller fleksibilitet …':'For example, grid capacity, new demand or flexibility …',
