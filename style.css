@@ -462,3 +462,9 @@ html[lang="en"] .landing-copy h1{font-size:clamp(36px,4.1vw,55px)}
 
 /* Match Bryan’s square portrait to the closer framing of the other team photos. */
 .team-portrait.team-portrait-bryan img{width:107%;max-height:none;flex-shrink:0;margin-left:-3.5%}
+
+/* On mobile, move directly from the introduction to the project process. */
+@media(max-width:760px){
+ .energy-illustration,.animation-section>.scene,.animation-section .demo-instruction,.animation-section>#selection-status{display:none}
+ .animation-section>.process{margin-top:0;padding-top:0;border-top:0}
+}
