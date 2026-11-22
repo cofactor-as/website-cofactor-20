@@ -32,6 +32,9 @@ function calculate(){
 let displayed=base.slice(),animation=0,logoAngle=0;
 function render(values){
  displayed=values;
+ const active=Object.values(enabled).some(Boolean),originalPeak=Math.round(Math.max(...base)),peak=Math.round(Math.max(...values));
+ $('#peak-value').textContent=active?`${originalPeak} → ${peak} kW`:`${originalPeak} kW`;
+ $('.peak-readout').setAttribute('aria-label',active?`${t('Effekttopp før tiltak')}: ${originalPeak} kW. ${t('Etter tiltak')}: ${peak} kW.`:`${t('Effekttopp')}: ${originalPeak} kW`);
  optimizedBars.forEach((bar,i)=>{
   bar.setAttribute('y',y(values[i]));bar.setAttribute('height',Math.max(0,205-y(values[i])));
   bar.querySelector('title').textContent=`${String(i).padStart(2,'0')}:00–${String(i+1).padStart(2,'0')}:00 · ${t('Opprinnelig')}: ${base[i]} kW · ${t('Optimalisert')}: ${Math.round(values[i])} kW`;
@@ -92,15 +95,55 @@ sectionLinks.forEach(link=>link.addEventListener('click',()=>{if(navItems.classL
 const sectionObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){sectionLinks.forEach(link=>{if(link.hash==='#'+entry.target.id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -55% 0px',threshold:0});
 document.querySelectorAll('main>section').forEach(section=>sectionObserver.observe(section));
 
-// Preview only: native validation, no network request or persistence.
-document.querySelector('#demo-form').addEventListener('submit',event=>{event.preventDefault();document.querySelector('#demo-feedback').textContent=t('Skjemaet er fylt ut. Dette er kun en forhåndsvisning – ingen opplysninger er sendt.');});
-document.querySelector('#demo-form').addEventListener('input',()=>{document.querySelector('#demo-feedback').textContent='';});
+// Formspree receives submissions; native POST remains available without JavaScript.
+const contactForm=document.querySelector('#demo-form');
+const contactSubmit=contactForm.querySelector('[type="submit"]');
+const contactLabel=contactForm.querySelector('.demo-submit-label');
+const contactFeedback=document.querySelector('#demo-feedback');
+const contactFields=[...contactForm.querySelectorAll('input,textarea')];
+const contactMessages={
+ sending:'Sender henvendelsen …',
+ success:'Takk! Henvendelsen er sendt. Vi tar kontakt så snart vi kan.',
+ error:'Henvendelsen kunne ikke sendes. Prøv igjen, eller kontakt oss på e-post.',
+ invalid:'Kontroller opplysningene, særlig e-postadressen, og prøv igjen.',
+ limited:'Skjemaet kan ikke ta imot flere henvendelser akkurat nå. Prøv senere, eller kontakt oss på e-post.',
+ uncertain:'Vi kunne ikke bekrefte at henvendelsen ble sendt. Prøv igjen, eller kontakt oss på e-post.'
+};
+let contactState='idle';
+function renderContactState(){
+ const sending=contactState==='sending';
+ contactSubmit.disabled=sending;
+ contactForm.setAttribute('aria-busy',String(sending));
+ contactFields.forEach(field=>{field.readOnly=sending;});
+ contactLabel.textContent=t(sending?'Sender …':'Send henvendelse');
+ contactFeedback.textContent=contactMessages[contactState]?t(contactMessages[contactState]):'';
+ contactFeedback.classList.toggle('is-error',['error','invalid','limited','uncertain'].includes(contactState));
+}
+contactForm.addEventListener('submit',async event=>{
+ event.preventDefault();
+ if(contactState==='sending'||!contactForm.reportValidity())return;
+ const body=new FormData(contactForm);
+ contactState='sending';renderContactState();
+ const controller=new AbortController();
+ const timeout=setTimeout(()=>controller.abort(),30000);
+ try{
+  const response=await fetch(contactForm.action,{method:'POST',body,headers:{Accept:'application/json'},signal:controller.signal});
+  if(response.ok){contactForm.reset();contactState='success';}
+  else contactState=response.status===429?'limited':response.status===422?'invalid':'error';
+ }catch{
+  // A network error can occur after the service has received the submission.
+  contactState='uncertain';
+ }finally{
+  clearTimeout(timeout);renderContactState();
+ }
+});
+contactForm.addEventListener('input',()=>{if(contactState!=='sending'){contactState='idle';renderContactState();}});
 
 document.addEventListener('languagechange',()=>{
  setComparison();render(displayed);updateStatus();
  if($('.optimizer').classList.contains('working'))$('#engine-copy').textContent=t('Samordner ressursene');
  navToggle.setAttribute('aria-label',t(navItems.classList.contains('open')?'Lukk meny':'Åpne meny'));
- if($('#demo-feedback').textContent)$('#demo-feedback').textContent=t('Skjemaet er fylt ut. Dette er kun en forhåndsvisning – ingen opplysninger er sendt.');
+ renderContactState();
  requestAnimationFrame(layout);
 });
 

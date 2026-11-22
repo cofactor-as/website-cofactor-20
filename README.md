@@ -41,11 +41,38 @@ https://cofactor-as.github.io/website-cofactor-20/
 
 If the first automatic run failed before Pages was enabled, run the workflow again after selecting GitHub Actions. Future pushes to `main` redeploy automatically.
 
-The workflow packages only `index.html`, `style.css`, `app.js`, `i18n.js` and `assets/`. Repository instructions and setup documentation are not part of the published website. No custom domain or production site changes are configured.
+The workflow packages only `index.html`, `personvern.html`, `style.css`, `app.js`, `i18n.js` and `assets/`. Repository instructions and setup documentation are not part of the published website. No custom domain or production site changes are configured.
 
 ## Preview behavior
 
 - Norwegian is the default; the header switches to English without reloading.
-- Contact submissions are a preview only. Nothing is sent or stored.
+- Contact enquiries are submitted to Formspree at `https://formspree.io/f/maeodrzd`, including from local previews. The form uses AJAX with a native POST fallback; no API key is needed.
+- Configure the receiving inbox and spam protection in the Formspree dashboard. After deployment, send a real test enquiry and confirm receipt in both Formspree and the inbox. Local simulated checks do not verify delivery.
 - Chart data and dispatch are illustrative, not a live optimizer.
 - Figtree loads from Google Fonts; the remaining website assets are local.
+
+## Privacy information
+
+`personvern.html` provides concise Norwegian and English privacy information, with contact at post@cofactor.no. Retention is based on the need to handle and follow up an enquiry. The earlier suggested 12-month and 30-day limits are not adopted promises or statutory requirements.
+
+Practical follow-up for Cofactor:
+
+- Regularly review enquiries and delete email, Formspree submissions and working copies when follow-up is no longer needed. Document any necessary project, legal-retention or legal-claim exception. Confirm how providers handle deletion and backups; an archive visibility limit is not proof of deletion.
+- Identify the receiving email provider, limit access and enable two-factor authentication. Check applicable data-processing agreements and international-transfer safeguards for Formspree and other providers. No account settings or executed agreements have been verified by this code change.
+- Document the legitimate-interest assessment for enquiries. Use the contract basis only when the individual personally requests steps towards a contract with them.
+- Handle rights requests through post@cofactor.no and normally respond within one month. Keep the notice aligned with actual routines and service changes.
+
+Reference guidance: https://www.datatilsynet.no/rettigheter-og-plikter/virksomhetenes-plikter/om-behandlingsgrunnlag/ and https://formspree.io/security/.
+
+## Social-sharing preview
+
+The homepage includes Open Graph and large-image card metadata. The preview uses
+`assets/cofactor-social-preview.png` (1200 × 627), with editable artwork at
+`linkedin/social-preview.svg`. Rebuild with `python3 linkedin/build-social-preview.py`
+(requires Figtree and rsvg-convert). The deployment already includes the PNG through assets/.
+
+Share metadata uses the current GitHub Pages project URL and Norwegian copy.
+If moving to a custom domain, update the absolute `og:url`, `og:image`, and
+`twitter:image` URLs. The browser language switch does not change this default
+sharing image. After deploying, use https://www.linkedin.com/post-inspector/
+to check and refresh the preview. Localhost cannot be fetched by LinkedIn.

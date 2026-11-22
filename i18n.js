@@ -2,12 +2,97 @@
 // preserves icons, form values, links, and the current animation state.
 (() => {
  const english = {
+  "Cofactor AS er ansvarlig for opplysningene du sender oss. Spørsmål om personvern kan sendes til:":"Cofactor AS is responsible for the information you send us. Privacy questions can be sent to:",
+  "Når du kontakter oss":"When you contact us",
+  "Vi bruker navn, e-postadresse og eventuell virksomhet og melding til å besvare og følge opp henvendelsen din. Navn og e-post er påkrevd i skjemaet; resten er valgfritt. Ikke send sensitive personopplysninger.":"We use your name, email address and any company details and message to respond to and follow up your enquiry. Name and email are required in the form; the other fields are optional. Please do not send sensitive personal information.",
+  "Behandlingen bygger på vår berettigede interesse i å besvare henvendelser og følge opp mulige oppdrag (GDPR artikkel 6 nr. 1 bokstav f). Du kan be om informasjon om interesseavveiningen og protestere. Hvis du selv ber om tiltak før en avtale du personlig skal inngå, gjelder artikkel 6 nr. 1 bokstav b.":"Processing is based on our legitimate interest in answering enquiries and following up potential assignments (GDPR Article 6(1)(f)). You can request information about the balancing assessment and object. Article 6(1)(b) applies if you request steps before entering a contract personally.",
+  "Henvendelsen melder deg ikke på markedsføring. Vi bruker ikke opplysningene til profilering eller automatiserte avgjørelser.":"Your enquiry does not subscribe you to marketing. We do not use the information for profiling or automated decisions.",
+  "Vi beholder opplysningene mens vi behandler henvendelsen og følger opp dialogen. Når det ikke lenger er behov for oppfølging, slettes de, med mindre de er nødvendige for et kundeoppdrag, lovpålagt dokumentasjon eller et konkret rettskrav. Dette gjelder både e-post og skjemakopier.":"We keep the information while handling your enquiry and following up the dialogue. When follow-up is no longer needed, it is deleted unless required for a customer assignment, statutory documentation or a specific legal claim. This applies to both email and form copies.",
+  "Hvem mottar opplysningene?":"Who receives the information?",
+  "Skjemaet behandles av Formspree og sendes til Cofactors e-postmottak. Formspree, e-postleverandøren og medarbeidere som følger opp henvendelsen, behandler opplysningene. Formspree opplyser at data kan behandles i USA, og at de bruker EUs standard personvernbestemmelser (SCC). Kontakt oss for informasjon om overføringsgarantier eller en kopi av disse.":"The form is processed by Formspree and delivered to Cofactor’s email inbox. Formspree, the email provider and staff handling your enquiry process the information. Formspree states that data may be processed in the USA and that it uses EU Standard Contractual Clauses (SCCs). Contact us for information about transfer safeguards or a copy of them.",
+  "Besøk på nettsiden":"Visiting the website",
+  "Nettsiden bruker GitHub Pages til hosting og Google Fonts til skrifttyper. Disse tjenestene mottar tekniske opplysninger, som IP-adresse, når nettleseren henter innhold. Vi har ikke lagt inn analyseverktøy, annonsepiksler eller egne informasjonskapsler. LinkedIn åpnes først når du følger lenken.":"The website uses GitHub Pages for hosting and Google Fonts for typefaces. These services receive technical information, such as your IP address, when your browser fetches content. We have not added analytics tools, advertising pixels or our own cookies. LinkedIn opens only when you follow the link.",
+  "Du kan be om innsyn, retting og sletting, og der vilkårene er oppfylt, begrensning, protest og dataportabilitet. Kontakt post@cofactor.no. Vi svarer normalt innen én måned og varsler deg hvis fristen må forlenges. Du kan klage til Datatilsynet.":"You can request access, correction and deletion and, where applicable, restriction, objection and data portability. Contact post@cofactor.no. We normally respond within one month and notify you if the deadline needs to be extended. You can complain to the Norwegian Data Protection Authority.",
+
+  "Sist oppdatert: 22. november 2026":"Last updated: 22 November 2026",
+  "Hvorfor vi behandler opplysningene":"Why we process your information",
+  "Vi behandler vanlige kontakt- og forretningshenvendelser på grunnlag av vår berettigede interesse i å besvare spørsmål og følge opp mulige oppdrag, jf. personvernforordningen artikkel 6 nr. 1 bokstav f. Vi begrenser behandlingen til opplysninger som er nødvendige for denne dialogen. Du kan be om informasjon om interesseavveiningen og protestere mot behandlingen.":"We process ordinary contact and business enquiries on the basis of our legitimate interest in answering questions and following up potential assignments, under GDPR Article 6(1)(f). We limit processing to information needed for this dialogue. You may request information about the balancing assessment and object to the processing.",
+  "Dersom du selv er part i en mulig avtale og ber oss om et tilbud eller andre tiltak før avtaleinngåelse, er grunnlaget artikkel 6 nr. 1 bokstav b. Dette grunnlaget gjelder ikke automatisk når du kontakter oss på vegne av en virksomhet.":"If you personally are a party to a potential contract and request a quotation or other pre-contractual steps, the basis is Article 6(1)(b). This basis does not automatically apply when you contact us on behalf of a company.",
+  "Det er frivillig å kontakte oss. Navn og e-postadresse er nødvendige for å sende skjemaet og få svar. Henvendelsen melder deg ikke på nyhetsbrev eller annen markedsføring. Vi bruker ikke kontaktskjemaet til profilering eller automatiserte avgjørelser.":"Contacting us is voluntary. Your name and email address are required to submit the form and receive a reply. Your enquiry does not subscribe you to newsletters or other marketing. We do not use the contact form for profiling or automated decisions.",
+  "Lagring og sletting":"Retention and deletion",
+  "Dersom konkrete opplysninger må beholdes for å fastsette, gjøre gjeldende eller forsvare et rettskrav, begrenses videre lagring til det som er nødvendig for dette formålet. Tekniske logger og sikkerhetskopier hos leverandørene følger deres egne lagringsrutiner.":"If specific information must be retained to establish, exercise or defend a legal claim, further retention is limited to what is necessary for that purpose. Providers’ technical logs and backups follow their own retention arrangements.",
+  "Mottakere og behandling utenfor EØS":"Recipients and processing outside the EEA",
+  "Henvendelsen mottas av medarbeidere som trenger opplysningene for å følge den opp. Formspree og leverandøren av e-posttjenesten behandler opplysningene som del av levering og lagring. Tilgangen skal begrenses til autoriserte personer.":"Your enquiry is received by staff who need the information to follow it up. Formspree and the email service provider process the information as part of delivery and storage. Access must be restricted to authorised people.",
+  "Formspree opplyser at de benytter EUs standard personvernbestemmelser (SCC) som databehandler. Disse bestemmelsene regulerer beskyttelsen av personopplysninger ved overføringer utenfor EØS. Kontakt oss på post@cofactor.no for informasjon om mottakere og aktuelle overføringsgarantier, eller for å be om en kopi av garantiene.":"Formspree states that it uses the EU Standard Contractual Clauses (SCCs) as a data processor. These clauses govern the protection of personal information transferred outside the EEA. Contact post@cofactor.no for information about recipients and applicable transfer safeguards, or to request a copy of the safeguards.",
+  "Formsprees informasjon om sikkerhet og overføringer":"Formspree information about security and transfers",
+  "Send spørsmål eller forespørsler om rettighetene dine til post@cofactor.no. Vi svarer uten ugrunnet opphold og normalt senest innen én måned. Hvis en komplisert forespørsel krever lengre tid, informerer vi deg innen denne fristen om hvorfor og når du kan forvente svar.":"Send questions or requests concerning your rights to post@cofactor.no. We respond without undue delay and normally within one month. If a complex request needs more time, we will inform you within that period of the reason and when to expect a response.",
+
+  "Velg tiltak og se hvordan effekttoppen endres.":"Select measures to see how peak demand changes.",
+  "Effekttopp før tiltak":"Peak demand before measures",
+  "Etter tiltak":"After measures",
+
+  "Cofactor leverer rådgivning og digitale verktøy for smartere utnyttelse av strømnettet. Vi analyserer energibruk, fleksibilitet og nettkapasitet.":"Cofactor provides consulting and digital tools for smarter use of the electricity grid. We analyse energy use, flexibility and grid capacity.",
+  "Les mer":"Read more",
+  "Dynagrid er vårt verktøy for områdeanalyser.":"Dynagrid is our tool for area-wide energy analysis.",
+  "Be om demonstrasjon":"Request a demonstration",
+  "Les mer om Dynagrid":"Read more about Dynagrid",
+  "Be om demonstrasjon – Dynagrid":"Request a demonstration – Dynagrid",
+  "Automatisert innhenting av forbruksdata for elektrisk og termisk energi":"Automated collection of consumption data for electrical and thermal energy",
+  "Analyser av nytt forbruk og nye tiltak.":"Analysis of new demand and new measures.",
+  "Optimering av tiltak for lastreduksjon.":"Optimisation of measures for demand reduction.",
+  "Vår egen løsning for å estimere produksjonen til solcelleanlegg.":"Our own solution for estimating solar PV generation.",
+  "Be om tilgang":"Request access",
+  "Les mer om Cofactor PV":"Read more about Cofactor PV",
+  "Be om tilgang – Cofactor PV":"Request access – Cofactor PV",
+  "Vurder hvordan ulike solinnstrålingsdata påvirker estimatene.":"Assess how different solar irradiation datasets affect estimates.",
+  "Vurder snøtap i ulike områder.":"Assess snow losses in different areas.",
+  "Last ned solinnstrålingsdata for integrasjon mot PVSyst.":"Download solar irradiation data for integration with PVSyst.",
+  "Vår egen løsning for å analysere og visualisere energibruken på timenivå.":"Our own solution for analysing and visualising hourly energy use.",
+  "Les mer om Gridload":"Read more about Gridload",
+  "Ta kontakt – Gridload":"Contact us – Gridload",
+  "Ta kontakt":"Contact us",
+  "Analyser energilaster i netteiers område, kommunen og grunnkretsen.":"Analyse energy demand across grid operator areas, municipalities and local statistical areas.",
+  "Temperaturdata for alle lokasjoner i Norge.":"Temperature data for all locations in Norway.",
+  "Kontinuerlig innhenting av data fra Elhub.":"Continuous data collection from Elhub.",
+
+  "Personvern":"Privacy",
+  "Personvern | Cofactor":"Privacy | Cofactor",
+  "Lenker i bunntekst":"Footer links",
+  "Tilbake til forsiden":"Back to home",
+  "Personvern på nettsiden":"Privacy on this website",
+  "Denne siden beskriver hvordan opplysninger håndteres når du besøker nettsiden eller kontakter Cofactor.":"This page describes how information is handled when you visit the website or contact Cofactor.",
+  "Kontakt og ansvar":"Contact and responsibility",
+  "Cofactor AS er ansvarlig for behandlingen av opplysninger du gir oss gjennom kontaktskjemaet. Du kan kontakte oss om personvern på e-post:":"Cofactor AS is responsible for processing information you provide through the contact form. You can contact us about privacy by email:",
+  "Opplysninger i kontaktskjemaet":"Information in the contact form",
+  "Skjemaet ber om navn og e-postadresse. Virksomhet og melding er valgfrie. Opplysningene brukes til å besvare og følge opp henvendelsen din. Unngå å sende sensitive personopplysninger i skjemaet.":"The form asks for your name and email address. Company and message are optional. The information is used to respond to and follow up on your enquiry. Please avoid sending sensitive personal information through the form.",
+  "Tjenester nettsiden bruker":"Services used by the website",
+  "Kontaktskjemaet sender opplysningene til Formspree, som behandler innsendingen og videresender den til Cofactors e-postmottak. Formspree opplyser at data kan behandles i USA og andre land der tjenesten opererer.":"The contact form sends your information to Formspree, which processes the submission and forwards it to Cofactor’s email inbox. Formspree states that data may be processed in the United States and other countries where it operates.",
+  "Formsprees personvernerklæring":"Formspree privacy policy",
+  "Nettsiden publiseres på GitHub Pages. GitHub kan behandle tekniske opplysninger om besøk, blant annet IP-adresse og forespørsler til serveren.":"The website is hosted on GitHub Pages. GitHub may process technical information about visits, including IP addresses and server requests.",
+  "GitHubs personvernerklæring":"GitHub privacy statement",
+  "Skrifttypen lastes fra Google Fonts. Nettleseren kobler derfor til Google for å hente skriftfilene.":"The typeface is loaded from Google Fonts. Your browser therefore connects to Google to retrieve the font files.",
+  "Googles personvernerklæring":"Google privacy policy",
+  "Informasjonskapsler og eksterne lenker":"Cookies and external links",
+  "Vi har ikke lagt inn analyseverktøy, annonsepiksler eller egne informasjonskapsler i nettsiden. LinkedIn-lenkene er vanlige lenker, ikke innebygde sporingsmoduler. Når du følger en ekstern lenke, gjelder personverninformasjonen på nettstedet du besøker.":"We have not added analytics tools, advertising pixels or our own cookies to the website. The LinkedIn links are ordinary links, not embedded tracking modules. When you follow an external link, the privacy information of the website you visit applies.",
+  "Dine rettigheter":"Your rights",
+  "Du kan kontakte oss for å be om innsyn, retting eller sletting av personopplysninger. Avhengig av behandlingen kan du også ha rett til begrensning, protest og dataportabilitet. Du kan klage til Datatilsynet.":"You can contact us to request access to, correction of or deletion of personal information. Depending on the processing, you may also have rights to restriction, objection and data portability. You can lodge a complaint with the Norwegian Data Protection Authority.",
+  "Les om rettighetene dine hos Datatilsynet":"Read about your rights at the Norwegian Data Protection Authority",
+
+  "Send henvendelse":"Send enquiry",
+  "Sender …":"Sending …",
+  "Sender henvendelsen …":"Sending your enquiry …",
+  "Takk! Henvendelsen er sendt. Vi tar kontakt så snart vi kan.":"Thank you! Your enquiry has been sent. We will get back to you as soon as we can.",
+  "Henvendelsen kunne ikke sendes. Prøv igjen, eller kontakt oss på e-post.":"Your enquiry could not be sent. Please try again or contact us by email.",
+  "Kontroller opplysningene, særlig e-postadressen, og prøv igjen.":"Please check your details, especially your email address, and try again.",
+  "Skjemaet kan ikke ta imot flere henvendelser akkurat nå. Prøv senere, eller kontakt oss på e-post.":"The form cannot accept more enquiries right now. Please try later or contact us by email.",
+  "Vi kunne ikke bekrefte at henvendelsen ble sendt. Prøv igjen, eller kontakt oss på e-post.":"We could not confirm whether your enquiry was sent. Please try again or contact us by email.",
+
   "Formål":"Purpose",
   "Områdeanalyser":"Area-wide analysis",
   "Estimering av PV produksjon":"PV generation estimates",
   "Nasjonale og regionale analyser":"National and regional analysis",
 
-  "Lisensiert":"Licensing",
+  "Tilgang":"Access",
   "Ta kontakt for pris":"Contact us for pricing",
   "Fritt tilgjengelig basisversjon":"Basic version available free of charge",
   "Internt arbeidsverktøy. Tilgang på forespørsel.":"Internal tool. Access available on request.",
@@ -43,9 +128,6 @@
   'Effektreduserende tiltak på Ranheim':'Peak Demand Reduction at Ranheim',
   'Utredet effektreduserende tiltak og energiløsninger for et område planlagt med 7 000 m² næringsareal og 600 boliger. Vurdert solceller, varme, elbillading, batterier og energiforvaltning. Utført i samarbeid med Asplan Viak i Trondheim.':'Assessed peak demand reduction measures and energy solutions for a development planned to include 7,000 m² of commercial space and 600 homes. Evaluated solar PV, heating, EV charging, batteries and energy management. Delivered in collaboration with Asplan Viak in Trondheim.',
 
-  'OMRÅDEUTVIKLING · KLIMA OG ENERGI':'AREA DEVELOPMENT · CLIMATE AND ENERGY',
-  'Klima- og energikonsept for Edvardsløkka':'Climate and Energy Concept for Edvardsløkka',
-  'Utredet et helhetlig klima- og energikonsept for 7 000 m² næringsareal og 130 boliger. Vurdert solceller, varme, elbillading, batterier, utslippsreduserende tiltak og energiforvaltning for området. Utført i samarbeid med Sweco og Glitre Energiløsninger.':'Developed an integrated climate and energy concept for 7,000 m² of commercial space and 130 homes. Assessed solar PV, heating, EV charging, batteries, emissions reduction measures and area-wide energy management. Delivered in collaboration with Sweco and Glitre Energiløsninger.',
 
   'TUNGTRANSPORT · LADING':'HEAVY TRANSPORT · CHARGING',
   'Ladeanlegg for tungbil':'Charging Infrastructure for Heavy-Duty Vehicles',
@@ -71,14 +153,14 @@
 
   'EKSEMPELPROSJEKT':'EXAMPLE PROJECT','Prosjekt 01':'Project 01','Prosjekt 02':'Project 02','Prosjekt 03':'Project 03','Prosjekt 04':'Project 04',
   'Forrige prosjekter':'Previous projects','Neste prosjekter':'Next projects','Bla gjennom prosjekter':'Browse projects',
-  'Energi i samspill — animasjonskonsept':'Cofactor — Free up grid capacity',
+  'Cofactor | Rådgivning og digitale energiverktøy':'Cofactor | Energy consulting and digital tools',
   'Hovedmeny':'Main navigation','Cofactor – forsiden':'Cofactor – home',
   'Åpne meny':'Open menu','Lukk meny':'Close menu','Kontakt og sosiale medier':'Contact and social media',
   'Cofactor på GitHub':'Cofactor on GitHub','Cofactor på LinkedIn':'Cofactor on LinkedIn','Send e-post til Cofactor':'Email Cofactor',
   'Frigi kapasitet':'Free up capacity','Om oss':'About us','Prosjekter':'Projects','Logg inn':'Log in',
   'Frigjør kapasitet.':'Free up grid capacity.','Gi plass til nytt forbruk':'Make room for new demand',
   'Vi leverer rådgivning og digitale verktøy for smartere utnyttelse av strømnettet.':'We provide advice and digital tools to make better use of the electricity grid.',
-  'Med Dynagrid samler vi automatisk forbruksdata fra Elhub og Statkraft Varme. Vi analyserer hvordan nytt forbruk, lokal energiproduksjon, batterier og fleksibilitet påvirker effekttoppene – og hjelper dere å vurdere tiltak tidlig.':'Dynagrid automatically collects consumption data from Elhub and Statkraft Varme. We analyse how new demand, local generation, batteries and flexibility affect peak loads — helping you assess options early.',
+  'Med Dynagrid samler vi automatisk forbruksdata for elektrisk og termisk energi. Vi analyserer hvordan nytt forbruk, lokal energiproduksjon, batterier og fleksibilitet påvirker effekttoppene – og hjelper dere å vurdere tiltak tidlig.':'Dynagrid automatically collects consumption data for electrical and thermal energy. We analyse how new demand, local generation, batteries and flexibility affect peak loads — helping you assess options early.',
   'Utforsk Dynagrid':'Explore Dynagrid','Ta kontakt for en demonstrasjon':'Get in touch for a demo',
   'Solkraft':'Solar power','Vindkraft':'Wind power','Batteri':'Battery','Nytt forbruk':'New demand','Lading':'Charging','Energibehov':'Energy demand','SAMSPILL':'COORDINATION',
   '01 / FRIGI KAPASITET':'01 / FREE UP CAPACITY','Energi i samspill.':'Energy working together.',
@@ -100,13 +182,10 @@
   'Utvikler datadrevne energiverktøy. Doktorgrad i maskinlæring og energibruk i bygg.':'Developing data-driven energy tools. Holds a PhD in machine learning and building energy use.',
   'Masterstudent / Energioptimalisering':'Master’s Student / Energy Optimization',
   'Utvikler modeller som samordner strøm, varme og lokal produksjon for å frigjøre nettkapasitet.':'Developing models that coordinate electricity, heat and local generation to free up grid capacity.',
-  '03 / PROSJEKTER':'03 / PROJECTS','05 / KONTAKT':'05 / CONTACT','Se hva Dynagrid kan gjøre.':'See what Dynagrid can do.',
+  '03 / PROSJEKTER':'03 / PROJECTS','05 / KONTAKT':'05 / CONTACT','Se hva våre løsninger kan gjøre':'See what our solutions can do',
   'Fortell oss litt om behovet deres, så kan vi tilpasse en demonstrasjon.':'Tell us a little about your needs so we can tailor a demonstration.',
   'Navn':'Name','E-post':'Email','Virksomhet':'Company','Hva ønsker dere å utforske?':'What would you like to explore?','Valgfritt':'Optional',
   'For eksempel nettkapasitet, nytt forbruk eller fleksibilitet …':'For example, grid capacity, new demand or flexibility …',
-  'Dette er en forhåndsvisning. Skjemaet sender eller lagrer ingen opplysninger.':'This is a preview. The form does not send or store any information.',
-  'Prøv skjemaet':'Try the form',
-  'Skjemaet er fylt ut. Dette er kun en forhåndsvisning – ingen opplysninger er sendt.':'The form is complete. This is only a preview — no information has been sent.',
   'Velg språk':'Choose language'
  };
  for(const name of ['Petter Arnestad','Karen B. Lindberg','Alexander Severinsen','Bryan Tancré']){
@@ -129,6 +208,8 @@
   }
  });
  const originalTitle=document.title;
+ const description=document.querySelector('meta[name="description"]');
+ const originalDescription=description?.content;
  const picker=document.querySelector('.language-picker');
  const trigger=document.querySelector('#language-trigger');
  const panel=document.querySelector('#language-options');
@@ -136,6 +217,7 @@
  function setLanguage(next){
   language=next==='en'?'en':'nb';document.documentElement.lang=language;
   document.title=t(originalTitle);
+  if(description)description.content=t(originalDescription);
   bindings.forEach(({node,original})=>{node.nodeValue=original.replace(original.trim(),t(original.trim()));});
   attributes.forEach(({el,attr,original})=>el.setAttribute(attr,t(original)));
   document.querySelectorAll('[data-language]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.language===language)));
