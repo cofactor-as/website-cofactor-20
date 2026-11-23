@@ -334,7 +334,6 @@ html[lang="en"] .landing-copy h1{font-size:clamp(36px,4.1vw,55px)}
 .process{margin-top:65px;padding-top:34px;border-top:1px solid #e6edf1}
 .process-heading{display:flex;align-items:center;gap:25px;margin-bottom:32px}
 .process-heading h3{font-size:22px;line-height:1.35;font-weight:500;letter-spacing:-.5px;margin:0}
-.process-heading-line{height:1px;width:48px;background:#b8cfd9}
 .process-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:0;gap:24px}
 .process-step{position:relative;min-width:0}
 .process-marker{position:relative;display:flex;align-items:center;height:34px;margin-bottom:23px}

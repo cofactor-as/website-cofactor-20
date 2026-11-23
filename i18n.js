@@ -158,7 +158,7 @@
   'Åpne meny':'Open menu','Lukk meny':'Close menu','Kontakt og sosiale medier':'Contact and social media',
   'Cofactor på GitHub':'Cofactor on GitHub','Cofactor på LinkedIn':'Cofactor on LinkedIn','Send e-post til Cofactor':'Email Cofactor',
   'Frigi kapasitet':'Free up capacity','Om oss':'About us','Prosjekter':'Projects','Logg inn':'Log in',
-  'Frigjør kapasitet.':'Free up grid capacity.','Gi plass til nytt forbruk':'Make room for new demand',
+  'Frigjør kapasitet.':'Unlock grid capacity.','Gi plass til nytt forbruk':'Make room for new demand',
   'Vi leverer rådgivning og digitale verktøy for smartere utnyttelse av strømnettet.':'We provide advice and digital tools to make better use of the electricity grid.',
   'Med Dynagrid samler vi automatisk forbruksdata for elektrisk og termisk energi. Vi analyserer hvordan nytt forbruk, lokal energiproduksjon, batterier og fleksibilitet påvirker effekttoppene – og hjelper dere å vurdere tiltak tidlig.':'Dynagrid automatically collects consumption data for electrical and thermal energy. We analyse how new demand, local generation, batteries and flexibility affect peak loads — helping you assess options early.',
   'Utforsk Dynagrid':'Explore Dynagrid','Ta kontakt for en demonstrasjon':'Get in touch for a demo',
