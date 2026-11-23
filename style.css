@@ -193,7 +193,7 @@ main{margin:0;max-width:1280px;padding:0 60px;width:100%}
 .landing-section{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px}
 .landing-copy{position:relative;z-index:1}
 .landing-copy h1{font-size:clamp(40px,4.6vw,62px);letter-spacing:-2.3px}
-.energy-illustration{width:92%;margin-left:0;justify-self:end;pointer-events:none;opacity:.7}
+.energy-illustration{width:92%;margin-left:0;justify-self:end;pointer-events:none;opacity:.9}
 .energy-illustration svg{width:100%;height:auto;display:block;overflow:visible}
 .energy-node .node-disc{fill:#FAFBFF;fill-opacity:.82;stroke:currentColor;stroke-opacity:.12;stroke-width:1}
 .energy-node .node-art{stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
