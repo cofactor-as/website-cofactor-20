@@ -41,7 +41,7 @@ https://cofactor-as.github.io/website-cofactor-20/
 
 If the first automatic run failed before Pages was enabled, run the workflow again after selecting GitHub Actions. Future pushes to `main` redeploy automatically.
 
-The workflow packages only `index.html`, `personvern.html`, `klimamonitor.html`, `style.css`, `app.js`, `i18n.js` and `assets/`. Repository instructions and setup documentation are not part of the published website. No custom domain or production site changes are configured.
+The workflow packages the website pages, the Hamar 2026 Dynagrid presentation, their CSS and JavaScript files, and `assets/`. The unfinished `klimamonitor.html` page is not linked or published. Repository instructions and setup documentation are not part of the published website. No custom domain or production site changes are configured.
 
 ## Preview behavior
 
