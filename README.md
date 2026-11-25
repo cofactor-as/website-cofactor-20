@@ -41,7 +41,7 @@ https://cofactor-as.github.io/website-cofactor-20/
 
 If the first automatic run failed before Pages was enabled, run the workflow again after selecting GitHub Actions. Future pushes to `main` redeploy automatically.
 
-The workflow packages only `index.html`, `personvern.html`, `style.css`, `app.js`, `i18n.js` and `assets/`. Repository instructions and setup documentation are not part of the published website. No custom domain or production site changes are configured.
+The workflow packages only `index.html`, `personvern.html`, `klimamonitor.html`, `style.css`, `app.js`, `i18n.js` and `assets/`. Repository instructions and setup documentation are not part of the published website. No custom domain or production site changes are configured.
 
 ## Preview behavior
 
@@ -76,3 +76,13 @@ If moving to a custom domain, update the absolute `og:url`, `og:image`, and
 `twitter:image` URLs. The browser language switch does not change this default
 sharing image. After deploying, use https://www.linkedin.com/post-inspector/
 to check and refresh the preview. Localhost cannot be fetched by LinkedIn.
+
+## Dynagrid customer presentation
+
+Open `dynagrid-presentasjon-hamar-2026.html` directly (no homepage navigation link). Eight slides target 13 minutes plus 2 minutes for discussion: introduction 1 min, team 1 min, example challenge 1 min, interactive energy demo 3 min, optimisation story 2 min, product overview 2 min, process 2 min, closing 1 min. The product overview uses four simplified interface illustrations for load analysis, new demand, the measure register and measure optimisation. The illustrations contain no customer data.
+
+Use previous/next, the slide picker, or arrow/PageUp/PageDown keys when focus is outside interactive controls. Home/End jump to the first/last slide. Fullscreen is available where supported. The language selector switches Norwegian/English. Direct slide links use `#slide-4`, for example. On smaller screens the slide can scroll; the interactive demo remains available in the presentation.
+
+Slide 5 explains automated data collection, shared peaks, individual measures and coordinated optimisation. Real screenshots and a documented customer scenario can be added later. The energy demo is illustrative and uses a snapshot of the homepage model in `presentation-demo.js`; it is not connected to Dynagrid or customer data. All five process steps are shown together on slide 6.
+
+The workflow publishes the presentation files alongside the website. An unlinked page is still public when deployed; `noindex` is not access control.
